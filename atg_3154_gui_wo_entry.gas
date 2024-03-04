@@ -1,0 +1,384 @@
+Program.Sub.ScreenSU.Start
+gui.frmJob..create
+gui.frmJob..caption("Job Entry")
+gui.frmJob..size(6135,5160)
+gui.frmJob..position(0,0)
+gui.frmJob..event(unload,frmjob_unload)
+gui.frmJob..alwaysontop(False)
+gui.frmJob..fontname("Arial")
+gui.frmJob..fontsize(8)
+gui.frmJob..forecolor(0)
+gui.frmJob..fontstyle(,,,,)
+gui.frmJob..BackColor(-2147483633)
+gui.frmJob..controlbox(True)
+gui.frmJob..maxbutton(True)
+gui.frmJob..minbutton(True)
+gui.frmJob..mousepointer(0)
+gui.frmJob..moveable(True)
+gui.frmJob..sizeable(True)
+gui.frmJob..ShowInTaskBar(True)
+gui.frmJob..titlebar(True)
+gui.frmJob.txtJob.create(textbox,"",True,2880,585,0,1400,1100,True,0,Tahoma,14,-2147483643,1)
+gui.frmJob.txtJob.maxLength(6)
+gui.frmJob.lbl1.create(label,"Please enter job number (6 digits)",True,4485,705,0,800,500,True,0,Tahoma,14,-2147483633,0)
+gui.frmJob.cmd1.create(button)
+gui.frmJob.cmd1.caption("Submit")
+gui.frmJob.cmd1.visible(True)
+gui.frmJob.cmd1.size(2055,1245)
+gui.frmJob.cmd1.zorder(0)
+gui.frmJob.cmd1.position(1800,2200)
+gui.frmJob.cmd1.enabled(True)
+gui.frmJob.cmd1.fontname("Tahoma")
+gui.frmJob.cmd1.fontsize(8)
+gui.frmJob.cmd1.event(click,cmd1_click)
+
+
+gui.frmSuffix..create
+gui.frmSuffix..caption("Choose Suffix")
+gui.frmSuffix..size(6255,6045)
+gui.frmSuffix..position(0,0)
+gui.frmSuffix..event(unload,frmsuffix_unload)
+gui.frmSuffix..alwaysontop(False)
+gui.frmSuffix..fontname("Arial")
+gui.frmSuffix..fontsize(8)
+gui.frmSuffix..forecolor(0)
+gui.frmSuffix..fontstyle(,,,,)
+gui.frmSuffix..BackColor(-2147483633)
+gui.frmSuffix..controlbox(True)
+gui.frmSuffix..maxbutton(True)
+gui.frmSuffix..minbutton(True)
+gui.frmSuffix..mousepointer(0)
+gui.frmSuffix..moveable(True)
+gui.frmSuffix..sizeable(True)
+gui.frmSuffix..ShowInTaskBar(True)
+gui.frmSuffix..titlebar(True)
+gui.frmSuffix.cboSuffix.create(combobox)
+gui.frmSuffix.cboSuffix.text("")
+gui.frmSuffix.cboSuffix.visible(True)
+gui.frmSuffix.cboSuffix.size(2265,330)
+gui.frmSuffix.cboSuffix.zorder(0)
+gui.frmSuffix.cboSuffix.position(1800,1095)
+gui.frmSuffix.cboSuffix.enabled(True)
+gui.frmSuffix.cboSuffix.fontname("Tahoma")
+gui.frmSuffix.cboSuffix.fontsize(14)
+gui.frmSuffix.cboSuffix.fontstyle(True,False,False,False)
+gui.frmSuffix.cmd2.create(button)
+gui.frmSuffix.cmd2.caption("Submit")
+gui.frmSuffix.cmd2.visible(True)
+gui.frmSuffix.cmd2.size(2055,1245)
+gui.frmSuffix.cmd2.zorder(0)
+gui.frmSuffix.cmd2.position(1860,3515)
+gui.frmSuffix.cmd2.enabled(True)
+gui.frmSuffix.cmd2.fontname("Tahoma")
+gui.frmSuffix.cmd2.fontsize(8)
+gui.frmSuffix.cmd2.event(click,cmd2_click)
+gui.frmSuffix.lbl1.create(label,"Please select suffix",True,2445,420,1,1700,500,True,0,Tahoma,14,-2147483633,0)
+
+
+gui.frmWorkcenters..create
+gui.frmWorkcenters..caption("Choose workcenter")
+gui.frmWorkcenters..size(10395,10740)
+gui.frmWorkcenters..position(0,0)
+gui.frmWorkcenters..event(unload,frmworkcenters_unload)
+gui.frmWorkcenters..alwaysontop(False)
+gui.frmWorkcenters..fontname("Arial")
+gui.frmWorkcenters..fontsize(8)
+gui.frmWorkcenters..forecolor(0)
+gui.frmWorkcenters..fontstyle(,,,,)
+gui.frmWorkcenters..BackColor(-2147483633)
+gui.frmWorkcenters..controlbox(True)
+gui.frmWorkcenters..maxbutton(True)
+gui.frmWorkcenters..minbutton(True)
+gui.frmWorkcenters..mousepointer(0)
+gui.frmWorkcenters..moveable(True)
+gui.frmWorkcenters..sizeable(True)
+gui.frmWorkcenters..ShowInTaskBar(True)
+gui.frmWorkcenters..titlebar(True)
+gui.frmWorkcenters.lvw1.create(listview)
+gui.frmWorkcenters.lvw1.view(3)
+gui.frmWorkcenters.lvw1.addlistviewcolumn("Seq",2000,0)
+gui.frmWorkcenters.lvw1.addlistviewcolumn("Workcenter",3000,0)
+gui.frmWorkcenters.lvw1.addlistviewcolumn("WC Dept",1500,0)
+gui.frmWorkcenters.lvw1.addlistviewcolumn("Closed",1500,0)
+gui.frmWorkcenters.lvw1.visible(True)
+gui.frmWorkcenters.lvw1.size(8205,7575)
+gui.frmWorkcenters.lvw1.zorder(0)
+gui.frmWorkcenters.lvw1.position(845,800)
+gui.frmWorkcenters.lvw1.enabled(True)
+gui.frmWorkcenters.lvw1.fontname("Tahoma")
+gui.frmWorkcenters.lvw1.fontsize(14)
+gui.frmWorkcenters.lvw1.fontstyle(True,False,False,False)
+gui.frmWorkcenters.lvw1.event(itemclick,lvw1_itemclick)
+gui.frmWorkcenters.lbl1.create(label,"Please select workcenter",True,3870,420,0,3225,200,True,0,Tahoma,14,-2147483633,0)
+gui.frmWorkcenters.cmd3.create(button)
+gui.frmWorkcenters.cmd3.caption("Submit")
+gui.frmWorkcenters.cmd3.visible(True)
+gui.frmWorkcenters.cmd3.size(2055,1245)
+gui.frmWorkcenters.cmd3.zorder(0)
+gui.frmWorkcenters.cmd3.position(3960,8610)
+gui.frmWorkcenters.cmd3.enabled(False)
+gui.frmWorkcenters.cmd3.fontname("Tahoma")
+gui.frmWorkcenters.cmd3.fontsize(8)
+gui.frmWorkcenters.cmd3.event(click,cmd3_click)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sEmployee.Declare(String)
+Variable.Global.sEmpName.Declare(String)
+Variable.Global.sSuffix.Declare(String)
+Variable.Global.sJob.Declare(String)
+Variable.Global.sSeq.Declare(String)
+Variable.Global.bolPause.Declare(Boolean,true)
+Variable.Global.sJobSuffSeq.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JSO
+'Project Start Date: 11/1/2011
+'Hooks:
+'  15760
+'Notes:
+'  For Gunderlin
+' Edited 1/5/12 to add FLAG_CLOSED check to suffix pull
+' Edited 5/11/12 to remove FLAG_CLOSED check on suffix pull per customer request
+
+Function.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,180)
+
+V.Global.sEmployee.Set(V.Passed.009993)
+V.Global.sEmpName.Set(V.Passed.009994)
+
+F.Intrinsic.control.If(V.global.sEmployee.trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please log in an employee and re-start")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Logoutcurr)
+	Gui.frmJob..Show
+
+F.Intrinsic.Control.endif
+
+
+
+
+Program.Sub.Main.End
+
+program.sub.cmd1_click.start
+V.Local.sSql.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.iCount.Declare(Long)
+
+V.Global.sJob.Set(V.Screen.frmJob!txtJob.Text)
+Gui.frmJob..Visible(false)
+
+'F.Intrinsic.String.Concat("SELECT DISTINCT SUFFIX FROM V_JOB_OPERATIONS WHERE JOB = '",V.global.sJob,"' AND SUFFIX <> 'ENG' AND FLAG_CLOSED <> 'Y'",V.Local.sSql)
+F.Intrinsic.String.Concat("SELECT DISTINCT SUFFIX FROM V_JOB_OPERATIONS WHERE JOB = '",V.global.sJob,"' AND SUFFIX <> 'ENG' ",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRo("rst1",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst1.EOF,<>,True)
+	' Count rows in recordset
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rst1.EOF,=,True)
+		F.Intrinsic.Math.Add(V.Local.iCount,1,V.Local.iCount)
+		F.ODBC.con!rst1.MoveNext
+	F.Intrinsic.Control.loop
+	F.odbc.con!rst1.Requery
+	F.Intrinsic.Control.If(V.local.iCount,=,1)
+		V.global.sSuffix.set(V.odbc.con!rst1.fieldval!SUFFIX)
+
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Sub(V.Local.iCount,1,V.Local.iCount)
+		F.Intrinsic.Control.For(V.Local.i,0,V.local.iCount,1)
+			Gui.frmSuffix.cboSuffix.AddItem(V.ODBC.con!rst1.FieldVal!SUFFIX,V.Local.i)
+			F.ODBC.con!rst1.MoveNext
+		
+		F.Intrinsic.Control.Next(V.Local.i)
+		Gui.frmSuffix..Show
+		V.Global.bolPause.Set(True)
+		F.Intrinsic.Control.DoUntil(V.Global.bolPause,=,False)
+			F.Intrinsic.Control.DoEvents
+		F.Intrinsic.Control.Loop
+
+	F.Intrinsic.Control.Endif
+
+	F.ODBC.con!rst1.Close
+
+	F.Intrinsic.Control.CallSub(Workcenters)
+
+F.Intrinsic.Control.Else
+
+	F.ODBC.con!rst1.Close
+	F.Intrinsic.String.Concat("Job number - ",V.Global.sJob," - not found, please try again",V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg)
+	Gui.frmjob..visible(true)
+
+F.Intrinsic.Control.EndIf
+
+
+
+program.sub.cmd1_click.end
+
+program.sub.cmd2_click.start
+
+
+V.Global.sSuffix.Set(V.Screen.frmSuffix!cboSuffix.Text)
+Gui.frmSuffix..Visible(false)
+V.Global.bolPause.Set(False)
+
+
+program.sub.cmd2_click.end
+
+program.sub.frmjob_unload.start
+Function.Intrinsic.Control.End
+Function.ODBC.Connection!Con.Close
+
+program.sub.frmjob_unload.end
+
+program.sub.frmsuffix_unload.start
+Function.Intrinsic.Control.End
+Function.ODBC.Connection!Con.Close
+
+program.sub.frmsuffix_unload.end
+
+Program.Sub.Workcenters.Start
+V.Local.sSql.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sEmpDept.Declare(String)
+V.Local.sCloseFlag.Declare(String)
+V.Local.sJobSuffSeq.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sWC.Declare(String)
+V.Local.iSubCount.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT DISTINCT WORKCENTER FROM V_JOB_OPERATIONS_WC WHERE JOB = '",V.global.sJob,"' AND SUFFIX = '",V.Global.sSuffix,"' ORDER BY FLAG_CLOSED, SEQ",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRo("rst1",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst1.EOF,<>,True)
+	' Count rows in recordset
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rst1.EOF,=,True)
+		F.Intrinsic.Math.Add(V.Local.iCount,1,V.Local.iCount)
+		F.ODBC.con!rst1.MoveNext
+	F.Intrinsic.Control.loop
+	F.odbc.con!rst1.Requery
+	F.Intrinsic.Control.If(V.local.iCount,=,1)
+		F.Intrinsic.String.Concat("SELECT SEQ FROM V_JOB_OPERATIONS_WC WHERE JOB = '",V.Global.sJob,"' AND SUFFIX = '",V.Global.sSuffix,"' AND WORKCENTER = '",V.odbc.con!rst1.FIELDVAL!WORKCENTER,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRO("RST2",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!RST2.EOF,<>,True)
+			V.Global.sSeq.Set(V.ODBC.con!RST2.FieldVal!seq)
+		F.Intrinsic.Control.endif
+		F.ODBc.con!RST2.Close
+
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SELECT DEPT_EMPLOYEE FROM EMPLOYEE_MSTR WHERE EMPLOYEE = '",V.Global.sEmployee,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRO("RST2",V.Local.sSql)
+		F.Intrinsic.control.If(V.ODBC.con!RST2.EOF,<>,True)
+			V.Local.sEmpDept.set(V.ODBC.con!RST2.FieldVal!DEPT_EMPLOYEE)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!RST2.Close
+		V.Local.iSubCount.Set(0)
+		F.Intrinsic.Math.Sub(V.Local.iCount,1,V.Local.iCount)
+		F.Intrinsic.Control.For(V.Local.i,0,V.Local.iCount,1)
+			V.Local.sWC.Set(V.ODBC.con!rst1.FieldVal!WORKCENTER)
+			F.Intrinsic.String.Concat("SELECT WC_DEPT FROM WORKCENTERS WHERE MACHINE = '",V.Local.sWC,"'",V.Local.sSql)
+			F.ODBC.connection!con.OpenRecordsetRO("rst3",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rst3.eof,<>,True)
+				F.Intrinsic.Control.If(V.Local.sEmpDept,=,V.ODBC.con!rst3.FieldVal!WC_DEPT)
+					F.Intrinsic.String.Concat("SELECT SEQ, FLAG_CLOSED FROM V_JOB_OPERATIONS_WC WHERE JOB = '",V.global.sJOB,"' AND SUFFIX = '",V.Global.sSuffix,"' AND WORKCENTER = '",V.local.sWC,"'",V.Local.sSql)
+					F.ODBC.Connection!con.OpenRecordsetRO("rst4",V.Local.sSql)
+					F.Intrinsic.Control.If(V.ODBC.con!RST4.EOF,<>,True)
+						F.Intrinsic.Math.Add(V.Local.isubcount,1,V.Local.iSubCount)
+						V.Global.sSeq.Set(V.ODBC.con!RST4.FieldVal!SEQ)
+						V.Local.sCloseFlag.Set(V.ODBC.con!rst4.FieldVal!FLAG_CLOSED)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.con!RST4.Close
+					' Valid WC to display, populate listview with seq, wc, wc dept, closed flag
+					Gui.frmWorkcenters.lvw1.addlistitem(V.Local.i,V.Global.sSeq)
+					Gui.frmWorkcenters.lvw1.SetListItemSubItemText(V.Local.i,1,V.local.sWC)
+					Gui.frmWorkcenters.lvw1.SetListItemSubItemText(V.Local.i,2,V.ODBC.con!rst3.FieldVal!WC_DEPT)
+					Gui.frmWorkcenters.lvw1.SetListItemSubItemText(V.Local.i,3,V.Local.sCloseFlag)
+				F.Intrinsic.Control.endif
+			F.Intrinsic.control.EndIf
+			F.ODBC.con!rst3.Close
+			F.ODBC.con!rst1.MoveNext
+		F.Intrinsic.Control.Next(V.Local.i)
+
+		F.Intrinsic.Control.If(V.Local.iSubCount,>,1)
+			V.Global.bolPause.Set(True)
+			Gui.frmWorkcenters..Show
+			F.Intrinsic.Control.DoUntil(V.Global.bolPause,=,False)
+				F.Intrinsic.Control.DoEvents
+			F.Intrinsic.Control.Loop
+		F.Intrinsic.control.endif
+
+	F.Intrinsic.Control.Endif
+
+F.Intrinsic.Control.Else
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst1.Close
+
+' Clock user into this new job sending job, suffix, seq
+F.Intrinsic.String.Concat(V.global.sJobSuffSeq,V.Global.sJob,V.Global.sSuffix,V.Global.sSeq,V.global.sJobSuffSeq)
+V.Passed.STATUS.Set("Start Job")
+V.Passed.STATUS-DATA.Set(V.global.sJobSuffSeq)
+
+F.Intrinsic.Control.End
+Function.ODBC.Connection!Con.Close
+
+
+
+
+
+Program.Sub.Workcenters.End
+
+program.sub.frmworkcenters_unload.start
+Function.Intrinsic.Control.End
+Function.ODBC.Connection!Con.Close
+
+program.sub.frmworkcenters_unload.end
+
+program.sub.cmd3_click.start
+
+V.Local.retVar.Declare(String)
+V.Local.sSelection.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.iOrd.declare(Long)
+V.Local.sWorkcenter.Declare(String)
+
+Gui.frmWorkcenters.lvw1.retrieveselectedlistitems(Variable.Local.retVar)
+Function.Intrinsic.string.split(Variable.Local.retVar,"*!*",Variable.Local.sSelection)
+Function.Intrinsic.Control.For(Variable.Local.i,Variable.Local.sSelection.LBound,Variable.Local.sSelection.UBound,1)
+	Gui.frmWorkcenters.lvw1.listitemkeytoordinal(Variable.Local.sSelection(v.Local.i),Variable.Local.iOrd)
+	V.global.sSeq.Set(V.Screen.frmWorkcenters!lvw1.ListItemText(V.Local.iORD))
+Function.Intrinsic.Control.Next(Variable.Local.i)
+
+Gui.frmWorkcenters..Visible(false)
+V.Global.bolPause.Set(False)
+
+
+
+program.sub.cmd3_click.end
+
+program.sub.lvw1_itemclick.start
+
+Gui.frmWorkcenters.cmd3.Enabled(TRUE)
+
+program.sub.lvw1_itemclick.end
+
+Program.Sub.Logoutcurr.Start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT JOB, SUFFIX, SEQ FROM V_JOBS_IN_PROCESS_G WHERE EMPLOYEE = '",V.Global.sEmployee,"' AND SUSPENDED_TIME_REC <> 'Y'",V.Local.SSQL)
+F.ODBC.Connection!con.OpenRecordsetRO("rst1",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst1.EOF,<>,True)
+	F.Intrinsic.Control.Dountil(V.ODBC.con!rst1.EOF,=,True)
+		F.intrinsic.string.concat(V.global.sjobsuffseq,V.odbc.con!rst1.fieldval!JOB,V.odbc.con!rst1.fieldval!SUFFIX,V.ODBC.con!rst1.fieldval!SEQ,V.global.sjobsuffSeq)
+		F.Intrinsic.String.Concatchr(V.Global.sJobSuffSeq,9,V.Global.sJobSuffSeq)
+	F.ODBC.con!rst1.Movenext
+	F.Intrinsic.control.Loop
+F.Intrinsic.Control.endif
+F.ODBC.con!rst1.Close
+
+
+Program.Sub.Logoutcurr.End
+
+
