@@ -1,0 +1,24 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JSO
+'Project Start Date: 11/11/2011
+'Hooks:
+'  15710
+'Notes:
+'  Script button renames
+
+
+V.Passed.000016.set("WO Entry")
+V.Passed.000020.Set("Issue Mat")
+V.Passed.000021.Set("Close Job")
+
+
+Program.Sub.Main.End
+
+
