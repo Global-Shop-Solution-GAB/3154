@@ -1,0 +1,62 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sEmployee.Declare(String)
+Variable.Global.sEmpName.Declare(String)
+Variable.Global.sJobSuffSeq.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JSO
+'Project Start Date: 11/1/2011
+'Hooks:
+'  15780
+'Notes:
+'  For Gunderlin
+
+Function.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,180)
+
+V.Global.sEmployee.Set(V.Passed.009993)
+V.Global.sEmpName.Set(V.Passed.009994)
+
+F.Intrinsic.control.If(V.global.sEmployee.trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please log in an employee and re-start")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(Logoutcurr)
+F.Intrinsic.Control.endif
+
+
+
+
+Program.Sub.Main.End
+
+Program.Sub.Logoutcurr.Start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT JOB, SUFFIX, SEQ FROM V_JOBS_IN_PROCESS_G WHERE EMPLOYEE = '",V.Global.sEmployee,"' AND SUSPENDED_TIME_REC <> 'Y'",V.Local.SSQL)
+F.ODBC.Connection!con.OpenRecordsetRO("rst1",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst1.EOF,<>,True)
+	F.Intrinsic.Control.Dountil(V.ODBC.con!rst1.EOF,=,True)
+		F.intrinsic.string.concat(V.global.sjobsuffseq,V.odbc.con!rst1.fieldval!JOB,V.odbc.con!rst1.fieldval!SUFFIX,V.ODBC.con!rst1.fieldval!SEQ,V.global.sjobsuffSeq)
+		F.Intrinsic.String.Concatchr(V.Global.sJobSuffSeq,9,V.Global.sJobSuffSeq)
+	F.ODBC.con!rst1.Movenext
+	F.Intrinsic.control.Loop
+F.Intrinsic.Control.endif
+F.ODBC.con!rst1.Close
+
+V.Passed.STATUS.Set("Start Job")
+V.Passed.STATUS-DATA.Set(V.global.sJobSuffSeq)
+
+Function.ODBC.Connection!Con.Close
+
+Function.Intrinsic.Control.End
+
+
+
+
+Program.Sub.Logoutcurr.End
+
+
